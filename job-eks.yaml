@@ -10,8 +10,8 @@ spec:
       containers:
         - name: kube-bench
           # Push the image to your ECR and then refer to it here
-          image: <ID.dkr.ecr.region.amazonaws.com/aquasec/kube-bench:ref>
-          command: ["kube-bench", "--version", "1.11"]
+          image: 894786418479.dkr.ecr.us-east-2.amazonaws.com/k8s/kube-bench:latest 
+          command: ["kube-bench", "--version", "1.14"]
           volumeMounts:
             - name: var-lib-kubelet
               mountPath: /var/lib/kubelet

@@ -2,18 +2,18 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: kube-bench
+  name: kube-bench1
 spec:
   template:
     metadata:
       labels:
-        app: kube-bench
+        app: kube-bench1
     spec:
       hostPID: true
       containers:
-        - name: kube-bench
+        - name: kube-bench1
           image: aquasec/kube-bench:latest
-          command: ["kube-bench"]
+          command: ["kube-bench", "--json"]
           volumeMounts:
             - name: var-lib-etcd
               mountPath: /var/lib/etcd
